@@ -3,7 +3,11 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/api/register"
   to = "/.netlify/functions/register"
   status = 200
+

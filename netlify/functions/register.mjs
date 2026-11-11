@@ -21,3 +21,4 @@ export async function handler(event) {
     body: JSON.stringify(result.data),
   };
 }
+

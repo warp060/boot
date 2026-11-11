@@ -63,13 +63,15 @@ function googleSheetsProxyPlugin(): Plugin {
   };
 }
 
+const rootDir = import.meta.dirname;
+
 const htmlInputs = {
-  main: path.resolve(__dirname, 'index.html'),
-  curriculum: path.resolve(__dirname, 'curriculum.html'),
-  schedule: path.resolve(__dirname, 'schedule.html'),
-  benefits: path.resolve(__dirname, 'benefits.html'),
-  faq: path.resolve(__dirname, 'faq.html'),
-  register: path.resolve(__dirname, 'register.html'),
+  main: path.resolve(rootDir, 'index.html'),
+  curriculum: path.resolve(rootDir, 'curriculum.html'),
+  schedule: path.resolve(rootDir, 'schedule.html'),
+  benefits: path.resolve(rootDir, 'benefits.html'),
+  faq: path.resolve(rootDir, 'faq.html'),
+  register: path.resolve(rootDir, 'register.html'),
 };
 
 export default defineConfig(() => {
@@ -82,7 +84,7 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(rootDir, '.'),
       },
     },
     server: {
