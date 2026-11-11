@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Registration — AI Builder Bootcamp</title>
+    <meta name="description" content="Apply for the AI Builder Bootcamp. Select your preferred language track (Tamil, Hindi, English). Up to 100 applicants will be shortlisted for a 50% fee discount." />
+    <meta name="theme-color" content="#050505" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ═══════════════ STICKY HEADER ═══════════════ -->
+    <header class="page-nav">
+      <div class="page-nav-inner">
+        <a class="page-brand" href="index.html" aria-label="Home">
+          <img src="mecollabx-logo.jpg" alt="Mecollabx Logo" />
+        </a>
+
+        <nav class="page-links" aria-label="Primary Navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About Us</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="schedule.html">Schedule &amp; Fees</a>
+          <a href="benefits.html">Benefits</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+
+        <a class="pill-nav-sm" href="register.html">Register Now</a>
+
+        <button class="page-burger" id="pageBurger" aria-label="Toggle Menu" aria-expanded="false">
+          <i class="bar"></i>
+          <i class="bar"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <nav class="page-menu" id="pageMenu" aria-label="Mobile Navigation">
+      <div class="menu-inner">
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="schedule.html">Schedule &amp; Fees</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+        <div class="menu-foot">
+          <a class="pill-menu-pg" href="register.html">Register Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="page-hero-content">
+          <p class="section-tag">Candidate Application</p>
+          <h1 class="section-title">Apply for the AI<br>Builder Bootcamp</h1>
+          <p class="section-desc">
+            Standard fee is ₹1,000. All applications will be reviewed, and up to 100 participants will be shortlisted for a 50% discount paying only ₹500. Complete the 10 questions below to submit your profile.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ APPLICATION FORM SECTION ═══════════════ -->
+    <section class="section">
+      <div class="section-inner">
+        <!-- Highlights Box -->
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 13px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.1em; font-weight: 600;">Cohort Details</div>
+            <div style="font-size: 17px; color: #fff; font-weight: 500; margin-top: 4px;">5 Days · Hands-on AI Tools · Tamil / Hindi / English</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 13px; text-transform: uppercase; color: #4ade80; letter-spacing: 0.1em; font-weight: 600;">50% Discount Available</div>
+            <div style="font-size: 17px; color: #fff; font-weight: 500; margin-top: 4px;">Selected Applicants Pay ₹500 (Std: ₹1,000)</div>
+          </div>
+        </div>
+
+        <form class="form-grid" id="regForm" novalidate>
+          <!-- 1. Full name -->
+          <div class="form-group">
+            <label for="fullName">1. Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" class="form-input" name="fullName" placeholder="e.g. Alex Kumar" required />
+          </div>
+
+          <!-- 2a. Email address -->
+          <div class="form-group">
+            <label for="email">2a. Email Address <span class="req">*</span></label>
+            <input type="email" id="email" class="form-input" name="email" placeholder="alex@example.com" required />
+          </div>
+
+          <!-- 2b. WhatsApp / Mobile -->
+          <div class="form-group">
+            <label for="phone">2b. WhatsApp / Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="phone" class="form-input" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+
+          <!-- 3. City, State, Country -->
+          <div class="form-group">
+            <label for="location">3. City, State &amp; Country <span class="req">*</span></label>
+            <input type="text" id="location" class="form-input" name="location" placeholder="e.g. Chennai, Tamil Nadu, India" required />
+          </div>
+
+          <!-- 4. Current category -->
+          <div class="form-group">
+            <label for="category">4. Current Category <span class="req">*</span></label>
+            <select id="category" class="form-input" name="category" required>
+              <option value="" disabled selected>Select your current profile</option>
+              <option value="student">College Student / Student Innovator</option>
+              <option value="freelancer">Beginner Freelancer / Independent Creator</option>
+              <option value="founder">Early-Stage Startup Founder / Entrepreneur</option>
+              <option value="developer">Developer / Software Engineer</option>
+              <option value="designer">Designer / UI/UX Specialist</option>
+              <option value="professional">Working Professional</option>
+              <option value="enthusiast">AI Enthusiast / Hobbyist</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- 5. College/organization & year/role -->
+          <div class="form-group">
+            <label for="org">5. College / Organization &amp; Role <span class="req">*</span></label>
+            <input type="text" id="org" class="form-input" name="org" placeholder="e.g. SRM University (3rd Year) or 'Not applicable'" required />
+          </div>
+
+          <!-- 6. Preferred language & batch timing -->
+          <div class="form-group">
+            <label for="language">6. Preferred Language Track <span class="req">*</span></label>
+            <select id="language" class="form-input" name="language" required>
+              <option value="" disabled selected>Choose your primary cohort language</option>
+              <option value="tamil">Tamil Cohort (தமிழ்) — Evening Slot</option>
+              <option value="hindi">Hindi Cohort (हिन्दी) — Evening Slot</option>
+              <option value="english">English Cohort — Evening Slot</option>
+            </select>
+          </div>
+
+          <!-- Prior AI Experience -->
+          <div class="form-group">
+            <label for="experience">Prior AI Tool Experience</label>
+            <select id="experience" class="form-input" name="experience">
+              <option value="" disabled selected>Select background level</option>
+              <option value="beginner">Beginner — Basic prompting (ChatGPT, Gemini web)</option>
+              <option value="intermediate">Intermediate — Familiar with APIs &amp; visual tools</option>
+              <option value="advanced">Advanced — Built AI web apps or automations</option>
+              <option value="none">Total Beginner — Ready to learn</option>
+            </select>
+          </div>
+
+          <!-- 7. Goals / what to build in 5 days -->
+          <div class="form-group full">
+            <label for="goals">7. What do you want to build or achieve in these five days? <span class="req">*</span></label>
+            <textarea id="goals" class="form-input" name="goals" placeholder="Be specific about your project idea, learning objective, or freelance goal. We evaluate this closely for the ₹500 shortlist!" required></textarea>
+          </div>
+
+          <!-- 8. LinkedIn profile URL -->
+          <div class="form-group">
+            <label for="linkedin">8. LinkedIn Profile URL <span style="font-size:11px; color:var(--muted); font-weight:normal;">(Optional but recommended)</span></label>
+            <input type="url" id="linkedin" class="form-input" name="linkedin" placeholder="https://linkedin.com/in/username" />
+          </div>
+
+          <!-- 9. GitHub / portfolio / project demo URL -->
+          <div class="form-group">
+            <label for="portfolio">9. GitHub / Portfolio / Project Demo URL <span style="font-size:11px; color:var(--muted); font-weight:normal;">(Optional)</span></label>
+            <input type="url" id="portfolio" class="form-input" name="portfolio" placeholder="https://github.com/username or portfolio link" />
+          </div>
+
+          <!-- 10. Cloud / deployed project URL & short description -->
+          <div class="form-group full">
+            <label for="cloudProject">10. Cloud / Deployed Project URL &amp; Short Description <span style="font-size:11px; color:var(--muted); font-weight:normal;">(Optional; write 'Not yet' if none)</span></label>
+            <input type="text" id="cloudProject" class="form-input" name="cloudProject" placeholder="e.g. https://my-app.vercel.app — built with React &amp; Gemini (or write 'Not yet')" />
+          </div>
+
+          <!-- Consent Checkbox -->
+          <div class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">
+              I consent to receiving official program updates, shortlisting notices, and payment instructions via WhatsApp and email. I agree that selection for the ₹500 discounted cohort is merit-based.
+            </label>
+          </div>
+
+          <!-- Submission status / error feedback -->
+          <div class="form-status" id="formStatus" role="alert" aria-live="polite"></div>
+
+          <!-- Submit Button -->
+          <div class="form-submit">
+            <button type="submit" class="btn-submit" id="submitBtn">Submit Application</button>
+          </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="form-success" id="formSuccess">
+          <div class="check-icon">🎉</div>
+          <h3>Application Successfully Submitted!</h3>
+          <p>
+            Thank you for applying to the <strong>AI Builder Bootcamp</strong>!
+          </p>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin: 24px auto; max-width: 480px; text-align: left; font-size: 14px; line-height: 1.6;">
+            <strong>Next Steps:</strong>
+            <br>1. Our admissions team will review your application according to the 100-point rubric.
+            <br>2. Shortlisted applicants will receive confirmation and the <strong>₹500 payment link</strong> via email &amp; WhatsApp.
+            <br>3. Once confirmed, you will receive onboarding resources and private batch channel invites.
+          </div>
+          <a class="btn-submit" href="index.html" style="display: inline-block; text-decoration: none; padding: 12px 36px; font-size: 15px;">Return to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <img src="mecollabx-logo.jpg" alt="Mecollabx" style="height:36px;width:auto;object-fit:contain;border-radius:4px;" />
+          <p>&copy; 2026 AI Builder Bootcamp · Organized by Mecollabx &amp; Buildrix</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About Us</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="schedule.html">Schedule &amp; Fees</a>
+          <a href="benefits.html">Benefits</a>
+          <a href="faq.html">FAQ</a>
+          <a href="register.html">Register</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        // Mobile menu toggle
+        const burger = document.getElementById('pageBurger');
+        const menu = document.getElementById('pageMenu');
+        if (burger && menu) {
+          burger.addEventListener('click', function() {
+            const isOpen = menu.classList.contains('open');
+            if (isOpen) {
+              menu.classList.remove('open');
+              burger.setAttribute('aria-expanded', 'false');
+            } else {
+              menu.classList.add('open');
+              burger.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+
+        // Deployed Google Apps Script Web App (/exec) URL connected to your Google Sheet
+        const GOOGLE_SCRIPT_URL =
+          'https://script.google.com/macros/s/AKfycbwiFiCJpIpfPags4Wh1Qf_0Wk7xA4rlQSPomN8kQ-_nHw3YxR5weYNK50qpEXCesZ_zHw/exec';
+
+        // Form submission & validation
+        const regForm = document.getElementById('regForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const formStatus = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function showStatus(msg) {
+          if (!formStatus) return;
+          formStatus.textContent = msg;
+          formStatus.classList.add('show');
+        }
+
+        function clearStatus() {
+          if (!formStatus) return;
+          formStatus.textContent = '';
+          formStatus.classList.remove('show');
+        }
+
+        function getSelectLabel(id) {
+          const el = document.getElementById(id);
+          if (!el) return '';
+          const opt = el.options[el.selectedIndex];
+          return opt && opt.value ? opt.text.trim() : '';
+        }
+
+        function collectFormPayload() {
+          return {
+            fullName: document.getElementById('fullName').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            location: document.getElementById('location').value.trim(),
+            category: getSelectLabel('category'),
+            org: document.getElementById('org').value.trim(),
+            language: getSelectLabel('language'),
+            experience: getSelectLabel('experience'),
+            goals: document.getElementById('goals').value.trim(),
+            linkedin: document.getElementById('linkedin').value.trim(),
+            portfolio: document.getElementById('portfolio').value.trim(),
+            cloudProject: document.getElementById('cloudProject').value.trim(),
+            consent: document.getElementById('consent').checked,
+          };
+        }
+
+        if (regForm) {
+          regForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            clearStatus();
+
+            const requiredFields = regForm.querySelectorAll('[required]');
+            let isValid = true;
+            let firstInvalid = null;
+
+            requiredFields.forEach(function(field) {
+              if (field.type === 'checkbox') {
+                if (!field.checked) {
+                  isValid = false;
+                  field.style.outline = '2px solid #f87171';
+                  if (!firstInvalid) firstInvalid = field;
+                } else {
+                  field.style.outline = '';
+                }
+              } else {
+                const valueOk = field.value.trim() !== '';
+                const emailOk = field.type !== 'email' || field.checkValidity();
+                if (!valueOk || !emailOk) {
+                  isValid = false;
+                  field.style.borderColor = '#f87171';
+                  if (!firstInvalid) firstInvalid = field;
+                } else {
+                  field.style.borderColor = '';
+                }
+              }
+            });
+
+            if (!isValid) {
+              showStatus('Please complete all required fields with a valid email address and accept the consent box.');
+              if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalid.focus();
+              }
+              return;
+            }
+
+            if (!GOOGLE_SCRIPT_URL) {
+              showStatus(
+                'Google Sheet endpoint is not linked yet. Deploy google-apps-script.gs as a Web App from your Google Sheet (Extensions -> Apps Script) and paste the /exec URL into GOOGLE_SCRIPT_URL in register.html.'
+              );
+              return;
+            }
+
+            const originalLabel = submitBtn ? submitBtn.textContent : 'Submit Application';
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.textContent = 'Submitting application...';
+            }
+
+            try {
+              // text/plain avoids CORS preflight while Apps Script reads JSON from e.postData.contents.
+              const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(collectFormPayload()),
+              });
+
+              if (!response.ok) {
+                throw new Error('Server returned HTTP ' + response.status);
+              }
+
+              const result = await response.json();
+              if (!result || result.ok !== true) {
+                throw new Error((result && result.error) || 'Failed to save registration.');
+              }
+
+              regForm.style.display = 'none';
+              formSuccess.classList.add('show');
+              formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (err) {
+              showStatus(
+                'Could not save your application to Google Sheets right now (' +
+                  (err && err.message ? err.message : 'network error') +
+                  '). Please verify the Apps Script Web App deployment and try again.'
+              );
+            } finally {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
+              }
+            }
+          });
+
+          // Clear validation errors upon typing
+          regForm.addEventListener('input', function(e) {
+            e.target.style.borderColor = '';
+            e.target.style.outline = '';
+            clearStatus();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
+

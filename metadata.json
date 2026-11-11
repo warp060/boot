@@ -1,0 +1,6 @@
+{
+  "name": "The Next Layer of Intelligence",
+  "description": "A unified infrastructure platform to help teams build, ship, and scale AI systems with confidence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
