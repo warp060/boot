@@ -296,6 +296,54 @@
           };
         }
 
+        async function postRegistration(url, payload) {
+          // text/plain avoids CORS preflight while Apps Script reads JSON from e.postData.contents.
+          return fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload),
+          });
+        }
+
+        async function parseRegistrationResponse(response) {
+          let result = null;
+          try {
+            result = await response.json();
+          } catch (_) {
+            // Non-JSON response falls through to HTTP status error.
+          }
+          if (!response.ok || !result || result.ok !== true) {
+            throw new Error(
+              (result && result.error) || 'Server returned HTTP ' + response.status
+            );
+          }
+          return result;
+        }
+
+        async function submitRegistration(payload) {
+          const isHttp =
+            window.location.protocol === 'http:' || window.location.protocol === 'https:';
+
+          if (isHttp) {
+            const proxyResponse = await postRegistration('/api/register', payload);
+            const contentType = (proxyResponse.headers.get('content-type') || '').toLowerCase();
+            // Static hosts without the Vite middleware return 404/405 or HTML; fall back directly.
+            if (
+              proxyResponse.status !== 404 &&
+              proxyResponse.status !== 405 &&
+              contentType.includes('application/json')
+            ) {
+              return parseRegistrationResponse(proxyResponse);
+            }
+          }
+
+          if (!GOOGLE_SCRIPT_URL) {
+            throw new Error('Google Sheet endpoint is not configured.');
+          }
+          const directResponse = await postRegistration(GOOGLE_SCRIPT_URL, payload);
+          return parseRegistrationResponse(directResponse);
+        }
+
         if (regForm) {
           regForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -350,21 +398,7 @@
             }
 
             try {
-              // text/plain avoids CORS preflight while Apps Script reads JSON from e.postData.contents.
-              const response = await fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(collectFormPayload()),
-              });
-
-              if (!response.ok) {
-                throw new Error('Server returned HTTP ' + response.status);
-              }
-
-              const result = await response.json();
-              if (!result || result.ok !== true) {
-                throw new Error((result && result.error) || 'Failed to save registration.');
-              }
+              await submitRegistration(collectFormPayload());
 
               regForm.style.display = 'none';
               formSuccess.classList.add('show');
